@@ -34,7 +34,7 @@ def version(base_module: str) -> str:
 
 def long_description(filename: str, end_tag: str, doc_url: str) -> str:
     lines = []
-    for line in Path(filename).read_text().splitlines():
+    for line in Path(filename).read_text(encoding='utf-8').splitlines():
         if end_tag in line:
             break
 
