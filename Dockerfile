@@ -5,9 +5,11 @@ WORKDIR /app
 # install requirements
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
-RUN pip3 install --no-cache-dir ./guesslang
 
 COPY . .
+
+RUN pip3 install --no-cache-dir ./guesslang
+
 
 EXPOSE 9000
 ENTRYPOINT [ "python3","index.py" ]
