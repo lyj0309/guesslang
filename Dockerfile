@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.9
 
 
 WORKDIR /app
@@ -8,8 +8,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN pip3 install --no-cache-dir /app/guesslang/
+# RUN pip3 install --no-cache-dir /app/guesslang/
 
 
 EXPOSE 9000
-ENTRYPOINT [ "python3","index.py" ]
+ENTRYPOINT [ "python3","main.py" ]
